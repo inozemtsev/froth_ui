@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>GoldenFroth</title>
+</head>
+<body>
+    <label for="camera-select">Camera:</label>
+
+    <form action="/result">
+        <select name="camera_id" id="camera-select">
+            <option value="">--Choose--</option>
+            {% for id, camera in cameras.items() %}
+            <option value="{{ id }}">{{ camera['name'] }} ({{ camera['url'] }})</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
