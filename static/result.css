@@ -26,6 +26,6 @@ html, body {
 {
     float:left;/*fix for  buggy browsers*/
     display:table-column;
-    width:200px;
+    width:390px;
     background-color:#ccc;
 }

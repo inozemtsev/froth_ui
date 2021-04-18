@@ -20,17 +20,21 @@
            <div class="divCell">Direction</div>
            <div class="divCell" id="directionValue"></div>
       </div>
-       <div class="divRow">
+       <div class="divRow" style="height: 100px;">
            <div class="divCell">Color</div>
-           <div class="divCell" id="colorValue"></div>
+           <div class="divCell" id="colorValue">
+                <div class="rectangle" id="top1-color" style="height:30px"></div>
+                <div class="rectangle" id="top2-color" style="height:30px"></div>
+                <div class="rectangle" id="top3-color" style="height:30px"></div>
+           </div>
       </div>
       <div class="divRow">
         <div class="divCell">Count</div>
         <div class="divCell" id="countValue"></div>
       </div>
       <div class="divRow">
-        <div class="divCell">Condition</div>
-        <div class="divCell" id="countValue"></div>
+        <div class="divCell">Status</div>
+        <div class="divCell" id="statusValue"></div>
       </div>
  </div>
     
@@ -62,14 +66,40 @@
             return output;
         }
 
-        var ws = new WebSocket("ws://{{ server_url }}/cameras/{{ id }}/ws");
+        var ws = new WebSocket("ws://{{ server_url }}/cameras/{{ id }}/ws/{{ session }}");
+        var image = document.getElementById('content');
+        var color = document.getElementById("colorValue");
+        var direction = document.getElementById("directionValue");
+        var speed = document.getElementById("speedValue");
+        var count = document.getElementById("countValue");
+        var status = document.getElementById("statusValue");
+        var top1Color = document.getElementById("top1-color");
+        var top2Color = document.getElementById("top2-color");
+        var top3Color = document.getElementById("top3-color");
+
         ws.onmessage = function(msg) {
-            var base64image = JSON.parse(msg.data)["data"];
-            console.log(base64image)
+            var jsonData = JSON.parse(msg.data);
+            var base64image = jsonData["data"];
+            var colors = jsonData["color"];
+            
             // var bytes = new Uint8Array(arrayBuffer);
 
-            var image = document.getElementById('content');
             image.src = 'data:image/jpeg;base64,' + base64image;
+             
+            // color.innerText = JSON.stringify(jsonData["color"]);
+            console.log(jsonData["direction"]);
+            direction.innerText = JSON.stringify(jsonData["direction"]);
+            speed.innerText = JSON.stringify(jsonData["speed"]);
+            count.innerText = JSON.stringify(jsonData["count"]);
+            status.innerText = JSON.stringify(jsonData["status"]);
+
+            top1Color.style.background = colors[0][0];
+            top1Color.innerText = colors[0][1] + "%";
+            top2Color.style.background = colors[1][0];
+            top2Color.innerText = colors[1][1] + "%";
+            top3Color.style.background = colors[2][0];
+            top3Color.innerText = colors[2][1] + "%";
+
         };
     </script>
 </body>
