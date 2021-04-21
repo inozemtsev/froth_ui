@@ -6,7 +6,7 @@
         },
     "1": 
         {
-            "name": "Main camera 2",
-            "url": "rtsp://104.236.90.59:3313/"
+            "name": "Test camera",
+            "url": "rtsp://104.236.90.59:3314/"
         }
 }
