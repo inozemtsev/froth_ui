@@ -4,11 +4,11 @@
 
 # Сокомандники
 
-* @Laggg
+* [@Laggg](https://github.com/Laggg)
 
-* @DarkYolo
+* [@DarkYolo](https://github.com/DarkYolo)
 
-* @artemseninhse
+* [@artemseninhse](https://github.com/artemseninhse)
 
 
 
