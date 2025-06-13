@@ -26,7 +26,7 @@ pkg-resources==0.0.0
 pydantic==1.8.1
 python-dotenv==0.17.0
 PyYAML==5.4.1
-requests==2.25.1
+requests==2.32.4
 rfc3986==1.4.0
 rtsp==1.1.8
 sniffio==1.2.0
