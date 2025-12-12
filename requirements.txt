@@ -32,7 +32,7 @@ rtsp==1.1.8
 sniffio==1.2.0
 starlette==0.13.6
 typing-extensions==3.7.4.3
-urllib3==1.26.4
+urllib3==2.6.0
 uvicorn==0.13.4
 uvloop==0.14.0
 watchgod==0.7
