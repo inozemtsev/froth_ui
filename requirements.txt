@@ -1,5 +1,5 @@
 aiofiles==0.6.0
-aiohttp==3.7.4.post0
+aiohttp==3.13.3
 async-timeout==3.0.1
 attrs==20.3.0
 certifi==2020.12.5
@@ -32,7 +32,7 @@ rtsp==1.1.8
 sniffio==1.2.0
 starlette==0.13.6
 typing-extensions==3.7.4.3
-urllib3==1.26.4
+urllib3==2.6.3
 uvicorn==0.13.4
 uvloop==0.14.0
 watchgod==0.7
